@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'social.apps.django_app.default',
 
     'Roughlog',
+    'articles',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -147,3 +148,5 @@ TEMPLATE_LOADERS = (
 	'django.template.loaders.filesystem.Loader',
 	'django.template.loaders.app_directories.Loader',
 )
+
+SOCIAL_AUTH_POCKET_KEY = ''
