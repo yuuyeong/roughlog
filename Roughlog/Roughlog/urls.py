@@ -24,8 +24,8 @@ from articles.views import ArticleListView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', home, name="home"), 
-    url(r'^articles/$', ArticleListView.as_view(), name="article_list"), 
-    
-    url('', include('social.apps.django_app.urls', namespace='social'))
+    url(r'^$', home, name="home"),
+    url(r'^articles/$', ArticleListView.as_view(), name="article_list"),
+
+    url('', include('social.apps.django_app.urls', namespace='social')),
 ] + static(settings.MEDIA_URL, document_ROOT=settings.MEDIA_ROOT)

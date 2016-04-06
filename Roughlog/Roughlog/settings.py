@@ -25,7 +25,7 @@ SECRET_KEY = '5dpqwa685-lf4b*qi4%pj(0phu=c6n#=+fs6h78wm%farh&nfk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['roughlog.net',]
+ALLOWED_HOSTS = ['roughlog.net', ]
 
 
 # Application definition
@@ -134,7 +134,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT_DIR, 'dist', 'static')
 STATICFILES_DIRS = [
-	os.path.join(BASE_DIR, 'Roughlog', 'static'),
+    os.path.join(BASE_DIR, 'Roughlog', 'static'),
 ]
 
 MEDIA_URL = '/media/'
