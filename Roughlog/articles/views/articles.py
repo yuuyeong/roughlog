@@ -1,5 +1,6 @@
 import requests
 
+from django.conf import settings
 from django.http import HttpResponse
 from django.views.generic import View
 
@@ -17,7 +18,7 @@ class ArticleListView(View):
 			response = requests.post(
 				url,
 				data = {
-					"consumer_key": "",
+					"consumer_key": settings.SOCIAL_AUTH_POCKET_KEY,
 					"access_token": user.extra_data['access_token'],
 				},
 				headers = {"X-Accept": "application/json"}

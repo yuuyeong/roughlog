@@ -140,13 +140,4 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(PROJECT_ROOT_DIR, 'dist', 'media')
 
-TEMPLATE_DIRS = [
-	os.path.join(BASE_DIR, 'Roughlog','templates'),
-]
-
-TEMPLATE_LOADERS = (
-	'django.template.loaders.filesystem.Loader',
-	'django.template.loaders.app_directories.Loader',
-)
-
-SOCIAL_AUTH_POCKET_KEY = ''
+SOCIAL_AUTH_POCKET_KEY = os.environ.get('POCKET_KEY')
