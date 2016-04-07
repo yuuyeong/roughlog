@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>우선은 안 읽은 목록만 가져왔음</h3>
+{% for article in lists %}
+{{ article.resolved_url }}
+<br>
+<br>
+{% endfor %}
+
+{% endblock %}

@@ -1,9 +1,12 @@
 <ul>
 	{% if request.user.is_authenticated %}
-		<p>{{request.user.username}}님 로그인</p>
-		<a id="article_list" href="{% url 'article_list' %}">아티클 가져오기</a>
+		<h4>{{request.user.nickname}}</h4>
+		<p>account : {{request.user.username}}</p>
+		<p>description : {{request.user.description}}</p>
+		<a id="article_list" href="{% url 'article_list' %}">포켓 리스트</a>
+		<a id="" href="{% url 'my-page' request.user.nickname %}">마이 페이지</a>
+		<a id="" href="{% url 'signout' %}">로그아웃</a>
 	{% else %}
-		<p>로그인이 필요합니다</p>
-		<a href="{% url 'social:begin' 'pocket' %}?next={{ request.path }}">Login with Pocket</a>
+		<a href="{% url 'social:begin' 'pocket' %}?next={{ request.path }}">포켓으로 로그인</a>
 	{% endif %}
 </ul>
