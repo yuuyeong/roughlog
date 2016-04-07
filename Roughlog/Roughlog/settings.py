@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'social.apps.django_app.default',
+    'django_extensions',
 
     'Roughlog',
     'articles',
