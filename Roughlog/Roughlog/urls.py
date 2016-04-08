@@ -35,6 +35,8 @@ urlpatterns = [
     url(r'^post/new/$', NewPostCreateView.as_view(), name="post-new"),
     url(r'^post/(?P<pk>\d+)/$', PostDetailView.as_view(), name="post-detail"),
 
+    url(r'^post/(?P<pk>\d+)/comment/$', CreateCommentView.as_view(), name="comment"),
+
     url('', include('social.apps.django_app.urls', namespace='social')),
 
     url(r'^summernote/', include('django_summernote.urls')),
