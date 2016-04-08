@@ -5,6 +5,7 @@
 		<p>description : {{request.user.description}}</p>
 		<a id="article_list" href="{% url 'article_list' %}">포켓 리스트</a>
 		<a id="" href="{% url 'my-page' request.user.nickname %}">마이 페이지</a>
+		<a id="" href="{% url 'post-new' %}">포스트 작성</a>
 		<a id="" href="{% url 'signout' %}">로그아웃</a>
 	{% else %}
 		<a href="{% url 'social:begin' 'pocket' %}?next={{ request.path }}">포켓으로 로그인</a>

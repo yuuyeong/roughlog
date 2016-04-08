@@ -4,4 +4,18 @@
 <h4>{{request.user.nickname}}</h4>
 <p>account : {{request.user.username}}</p>
 <p>description : {{request.user.description}}</p>
+
+<hr>
+<!-- 내가 쓴 포스트들  -->
+<ul>
+	{% for post in request.user.post_set.all %}
+	<li>
+		<a href="{% url 'post-detail' post.id %}">
+			<h3>{{ post.title }}</h3>
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+
+
 {% endblock %}
