@@ -26,4 +26,24 @@
 		</ul>
 		
 	</section>
+
+	<!-- tag 작성 -->
+
+	<form action="{% url 'tag' post.pk %}" method="post">
+		{% csrf_token %}
+		<input type="text" name="tag_name">
+		<input type="submit" value="등록">
+	</form>
+
+
+	<!-- tag list -->
+	<section>
+		<h4>Tags({{ post.tag_set.count }})</h4>
+		<ul>
+		{% for tag in post.tag_set.all %}
+			<li>#{{ tag.name }}</li>
+		{% endfor %}
+		</ul>
+		
+	</section>
 {% endblock %}

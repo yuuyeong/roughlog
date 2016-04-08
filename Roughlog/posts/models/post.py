@@ -30,3 +30,12 @@ class Post(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True,
     )
+
+    def get_absolute_url(self):
+        from django.core.urlresolvers import reverse
+        return reverse(
+            "post-detail",
+            kwargs={
+                "pk": self.pk,
+            },
+        )
