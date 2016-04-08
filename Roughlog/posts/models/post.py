@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.db import models
 
+from tags.models import Tag
+
 
 class Post(models.Model):
     user = models.ForeignKey(
@@ -15,6 +17,10 @@ class Post(models.Model):
 
     article = models.URLField(
         max_length=250,
+    )
+
+    tag_set = models.ManyToManyField(
+        Tag,
     )
 
     created_at = models.DateTimeField(

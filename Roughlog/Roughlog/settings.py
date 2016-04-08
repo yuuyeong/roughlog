@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'articles',
     'users',
     'posts',
+    'tags',
 ]
 
 MIDDLEWARE_CLASSES = [
