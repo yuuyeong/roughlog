@@ -40,10 +40,12 @@ INSTALLED_APPS = [
 
     'social.apps.django_app.default',
     'django_extensions',
+    'django_summernote',
 
     'Roughlog',
     'articles',
     'users',
+    'posts',
 ]
 
 MIDDLEWARE_CLASSES = [
