@@ -5,4 +5,25 @@
 
 	<h4>TITLE : {{ post.title }}</h4>
 	{{ post.content|safe }}
+
+
+	<!-- comment 작성 -->
+
+	<form action="{% url 'comment' post.pk %}" method="post">
+		{% csrf_token %}
+		<textarea name="content" id="" cols="30" rows="10"></textarea>
+		<input type="submit" value="등록">
+	</form>
+
+
+	<!-- comment list -->
+	<section>
+		<h4>comments({{ post.comment_set.count }})</h4>
+		<ul>
+		{% for comment in post.comment_set.all %}
+			<li>{{ comment.user.nickname }} : {{ comment.content }}</li>
+		{% endfor %}
+		</ul>
+		
+	</section>
 {% endblock %}
