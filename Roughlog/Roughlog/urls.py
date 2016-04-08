@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^signout/$', UserSignOutView.as_view(), name="signout"),
 
     url(r'^post/new/$', NewPostCreateView.as_view(), name="post-new"),
+    url(r'^post/(?P<pk>\d+)/$', PostDetailView.as_view(), name="post-detail"),
 
     url('', include('social.apps.django_app.urls', namespace='social')),
 
