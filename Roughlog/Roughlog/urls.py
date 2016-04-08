@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 from Roughlog.views import home
 from articles.views import *
 from users.views import *
+from posts.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -31,5 +32,9 @@ urlpatterns = [
     url(r'^auth/(?P<slug>\w+)/$', UserProfilePage.as_view(), name="my-page"),
     url(r'^signout/$', UserSignOutView.as_view(), name="signout"),
 
+    url(r'^post/new/$', NewPostCreateView.as_view(), name="post-new"),
+
     url('', include('social.apps.django_app.urls', namespace='social')),
+
+    url(r'^summernote/', include('django_summernote.urls')),
 ] + static(settings.MEDIA_URL, document_ROOT=settings.MEDIA_ROOT)
