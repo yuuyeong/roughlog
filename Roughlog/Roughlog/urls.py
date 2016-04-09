@@ -31,10 +31,12 @@ urlpatterns = [
     url(r'^articles/$', ArticleListView.as_view(), name="article_list"),
 
     url(r'^auth/(?P<slug>\w+)/$', UserProfilePage.as_view(), name="my-page"),
+    url(r'^auth/(?P<slug>\w+)/clip/$', UserClipPostView.as_view(), name="my-page-clip"),
     url(r'^signout/$', UserSignOutView.as_view(), name="signout"),
 
     url(r'^post/new/$', NewPostCreateView.as_view(), name="post-new"),
     url(r'^post/(?P<pk>\d+)/$', PostDetailView.as_view(), name="post-detail"),
+    url(r'^post/(?P<pk>\d+)/clip/$', PostClipView.as_view(), name="post-clip"),
 
     url(r'^post/(?P<pk>\d+)/comment/$', CreateCommentView.as_view(), name="comment"),
 

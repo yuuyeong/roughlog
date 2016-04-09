@@ -23,6 +23,12 @@ class Post(models.Model):
         Tag,
     )
 
+    clip_user_set = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name="clip_post_set",
+        through="Clip",
+    )
+
     created_at = models.DateTimeField(
         auto_now_add=True,
     )

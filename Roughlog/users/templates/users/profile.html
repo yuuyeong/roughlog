@@ -6,16 +6,10 @@
 <p>description : {{request.user.description}}</p>
 
 <hr>
-<!-- 내가 쓴 포스트들  -->
-<ul>
-	{% for post in request.user.post_set.all %}
-	<li>
-		<a href="{% url 'post-detail' post.id %}">
-			<h3>{{ post.title }}</h3>
-		</a>
-	</li>
-	{% endfor %}
-</ul>
+<a id="" href="{% url 'my-page' request.user.nickname %}">POST</a>
+<a id="" href="{% url 'my-page-clip' request.user.nickname %}">CLIPED POST</a>
 
+{% block posts %}
+{% endblock %}
 
 {% endblock %}
