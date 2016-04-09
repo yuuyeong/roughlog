@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^articles/$', ArticleListView.as_view(), name="article_list"),
 
     url(r'^auth/(?P<slug>\w+)/$', UserProfilePage.as_view(), name="my-page"),
+    url(r'^auth/(?P<slug>\w+)/clip/$', UserClipPostView.as_view(), name="my-page-clip"),
     url(r'^signout/$', UserSignOutView.as_view(), name="signout"),
 
     url(r'^post/new/$', NewPostCreateView.as_view(), name="post-new"),

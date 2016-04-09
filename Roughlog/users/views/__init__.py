@@ -1,2 +1,2 @@
-from .profile import UserProfilePage
+from .profile import UserProfilePage, UserClipPostView
 from .signout import UserSignOutView
