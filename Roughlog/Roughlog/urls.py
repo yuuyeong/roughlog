@@ -29,6 +29,10 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name="home"),
     url(r'^articles/$', ArticleListView.as_view(), name="article_list"),
+    url(r'^search/$', UserListView.as_view(), name="user-search"),
+
+    url(r'^follow/(?P<slug>\w+)/$', UserFollowView.as_view(), name="follow"),
+    url(r'^unfollow/(?P<slug>\w+)/$', UserUnfollowView.as_view(), name="unfollow"),
 
     url(r'^auth/(?P<slug>\w+)/$', UserProfilePage.as_view(), name="my-page"),
     url(r'^auth/(?P<slug>\w+)/clip/$', UserClipPostView.as_view(), name="my-page-clip"),
