@@ -23,6 +23,7 @@ from Roughlog.views import home
 from articles.views import *
 from users.views import *
 from posts.views import *
+from tags.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -36,6 +37,9 @@ urlpatterns = [
     url(r'^post/(?P<pk>\d+)/$', PostDetailView.as_view(), name="post-detail"),
 
     url(r'^post/(?P<pk>\d+)/comment/$', CreateCommentView.as_view(), name="comment"),
+
+    url(r'^post/(?P<pk>\d+)/tag/$', CreateTagView.as_view(), name="tag"),
+    url(r'^tag/(?P<slug>\w+)/$', TagDetailView.as_view(), name="tag-detail"),
 
     url('', include('social.apps.django_app.urls', namespace='social')),
 
