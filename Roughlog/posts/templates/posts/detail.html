@@ -6,6 +6,8 @@
 	<h4>TITLE : {{ post.title }}</h4>
 	{{ post.content|safe }}
 
+	<!-- clip 관련 -->
+	<h4>clip({{ post.like_user_set.count }})</h4>
 
 	<!-- comment 작성 -->
 

@@ -20,6 +20,8 @@ class NewPostCreateView(FormView):
         )
 
         for tag_name in tag_list:
+            if tag_name is "":
+                continue
             tag, is_created = Tag.objects.get_or_create(
                 name=tag_name,
             )

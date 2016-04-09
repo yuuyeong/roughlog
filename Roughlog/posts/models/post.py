@@ -23,9 +23,9 @@ class Post(models.Model):
         Tag,
     )
 
-    like_user_set = models.ManyToManyField(
+    clip_user_set = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
-        related_name="like_post_set",
+        related_name="clip_post_set",
         through="Clip",
     )
 
