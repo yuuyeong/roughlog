@@ -4,10 +4,14 @@
 <hr>
 
 	<h4>TITLE : {{ post.title }}</h4>
+
 	{{ post.content|safe }}
 
 	<!-- clip 관련 -->
-	<h4>clip({{ post.like_user_set.count }})</h4>
+	<h4>clip({{ post.clip_user_set.count }})</h4>
+	<div>
+		<a href="{% url 'post-clip' post.pk %}" role="button" name="like">ⓒ</a>
+	</div>
 
 	<!-- comment 작성 -->
 
