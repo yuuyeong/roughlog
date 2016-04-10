@@ -1,11 +1,8 @@
 from django.db import models
+from django.conf import settings
 
 
 class Article(models.Model):
-    item_id = models.CharField(
-        max_length=20,
-    )
-
     origin_url = models.URLField(
         max_length=250,
     )
@@ -14,10 +11,16 @@ class Article(models.Model):
         max_length=128,
     )
 
-    content = models.TextField()
+    excerpt = models.TextField()
 
     status = models.BooleanField()
+
     favorite = models.BooleanField()
 
-    created_at = models.DateTimeField()
-    updated_at = models.DateTimeField()
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+    )
+
+    updated_at = models.DateTimeField(
+        auto_now=True,
+    )
