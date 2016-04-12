@@ -4,3 +4,6 @@ python-social-auth
 requests
 django-summernote
 Pillow
+celery[redis]
+redis
+honcho
