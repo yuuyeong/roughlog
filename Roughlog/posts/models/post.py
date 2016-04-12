@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 
 from tags.models import Tag
+from articles.models import Article
 
 
 class Post(models.Model):
@@ -15,8 +16,8 @@ class Post(models.Model):
 
     content = models.TextField()
 
-    article = models.URLField(
-        max_length=250,
+    article = models.ForeignKey(
+        Article,
     )
 
     tag_set = models.ManyToManyField(
