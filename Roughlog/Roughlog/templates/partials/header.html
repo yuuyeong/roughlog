@@ -1,3 +1,4 @@
+<header id="header">
 <ul>
 	{% if request.user.is_authenticated %}
 		<h4>{{request.user.nickname}}</h4>
@@ -12,3 +13,4 @@
 		<a href="{% url 'social:begin' 'pocket' %}?next={{ request.path }}">포켓으로 로그인</a>
 	{% endif %}
 </ul>
+</header>
