@@ -15,13 +15,12 @@ class Pocket(models.Model):
         max_length=20,
     )
 
-    tag_set = models.ManyToManyField(
-        "PocketTag",
-        related_name="pocket_set"
-    )
+    time_added = models.IntegerField()
+
+    time_updated = models.IntegerField()
 
     def __str__(self):
-        return "{user} saved {title}".format(
-            user=user.nickname,
-            title=article.title,
+        return "{name} saved {title}".format(
+            name=self.user.nickname,
+            title=self.article.title,
         )

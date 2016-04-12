@@ -9,13 +9,19 @@ class Article(models.Model):
 
     title = models.CharField(
         max_length=128,
+        blank=True,
     )
 
     excerpt = models.TextField()
 
-    status = models.BooleanField()
+    img = models.URLField(
+        max_length=250,
+        blank=True,
+    )
 
-    favorite = models.BooleanField()
+    status = models.BooleanField(
+        default=False,
+    )
 
     created_at = models.DateTimeField(
         auto_now_add=True,
