@@ -2,10 +2,32 @@
 
 {% block content %}
 {% for pocket in request.user.pocket_set.all %}
-{{ pocket.article.title }}
-{{ pocket.article.origin_url }}
-<br>
-<br>
-{% endfor %}
+<div class="col-md-6 clearfix">
+<div id="fh5co-tab-feature-center" class="fh5co-tab text-center" style="display: block; width: 100%; margin: 0px;" >
+	<div class="resp-tabs-container hor_1">
+		<a href="{{pocket.article.origin_url}}">
+			<div class="article" >
+			<h2 class="resp-accordion hor_1 resp-tab-active" style="background: none;">
+				{{pocket.article.title}}
+			</h2>
 
+			<div class="resp-tab-content hor_1 resp-tab-content-active" aria-labelledby="hor_1_tab_item-0" style="display:block">
+				<div class="row">
+					{% if pocket.article.img %}
+					<div class="excerpt clearfix">
+					<img src="{{pocket.article.img}}" alt="image" class="article-img">
+					{% else %}
+					<div class="excerpt">
+					{% endif %}
+						<p>{{ pocket.article.excerpt }}</p>
+					</div>
+					<a href="{% url 'post-new' pocket.pk %}" class="btn btn-primary btn-sm btn-block">WRITE</a>
+				</div>
+			</div>
+			</div>
+		</a>
+	</div>
+</div>
+</div>
+{% endfor %}
 {% endblock %}
