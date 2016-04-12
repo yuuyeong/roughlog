@@ -20,5 +20,10 @@ class User(AbstractUser):
         through_fields=("followee", "follower")
     )
 
+    since = models.IntegerField(
+        blank=True,
+        null=True,
+    )
+
     def __str__(self):
         return "{name}".format(name=self.username)
