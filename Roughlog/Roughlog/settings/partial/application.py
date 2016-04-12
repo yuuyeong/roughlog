@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'django_summernote',
     'social.apps.django_app.default',
+    'pipeline',
 ]
 
 MIDDLEWARE_CLASSES = [
