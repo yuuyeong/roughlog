@@ -21,6 +21,7 @@ class Post(models.Model):
 
     tag_set = models.ManyToManyField(
         Tag,
+        blank=True,
     )
 
     clip_user_set = models.ManyToManyField(

@@ -3,3 +3,7 @@ Django==1.9.4
 python-social-auth
 requests
 django-summernote
+Pillow
+celery[redis]
+redis
+honcho

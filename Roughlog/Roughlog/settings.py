@@ -124,12 +124,15 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.auth_allowed',
     'social.pipeline.social_auth.social_user',
     'social.pipeline.user.get_username',
+
     'users.pipeline.extra_data.get_user_description',
+
     'social.pipeline.user.create_user',
-    'users.pipeline.extra_data.save_profile',
+
     'social.pipeline.social_auth.associate_user',
     'social.pipeline.social_auth.load_extra_data',
     'social.pipeline.user.user_details',
+    'users.pipeline.extra_data.save_profile',
 )
 
 
@@ -162,3 +165,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(PROJECT_ROOT_DIR, 'dist', 'media')
 
 SOCIAL_AUTH_POCKET_KEY = os.environ.get('POCKET_KEY')
+
+BROKER_URL = 'redis://localhost:6379/0'
