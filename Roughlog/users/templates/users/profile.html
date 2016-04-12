@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h4>{{request.user.nickname}}</h4>
-<p>account : {{request.user.username}}</p>
-<p>description : {{request.user.description}}</p>
+<div class="col-md-4 col-sm-6">
+	<h2 class="h4">{{request.user.nickname}}</h2>
+	<p>account : {{request.user.username}}</p>
+	<p>description : {{request.user.description}}</p>
+</div>
+<div class="fh5co-spacer fh5co-spacer-md"></div>
 
-<hr>
-<a id="" href="{% url 'my-page' request.user.nickname %}">POST</a>
-<a id="" href="{% url 'my-page-clip' request.user.nickname %}">CLIPED POST</a>
+<!-- <a id="" href="{% url 'my-page' request.user.nickname %}">POST</a>
+<a id="" href="{% url 'my-page-clip' request.user.nickname %}">CLIPED POST</a> -->
 
 {% block posts %}
 {% endblock %}
