@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
-{% load staticfiles %}
 
-{% block title %}{% endblock %}
-
+{% block title %}Roughlog{% endblock %}
 {% block content %}
-
-
+<div class="fh5co-call-to-action text-center">
+	<div class="container">
+		<div class="fh5co-call-to-action-wrap">
+			<div class="fh5co-call-to-action-inner text-center">
+				<h3 class="fh5co-call-to-action-text">Roughlog</h3>
+				<p class="fh5co-call-to-action-text">Pocket에 저장한 글들을 꺼내 읽으며 생각을 정리해 보세요</p>
+				<a href="{% url 'social:begin' 'pocket' %}?next={{ request.path }}" class="btn btn-outline btn-sm">Join</a>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}
 
-{% block script %}
-<!-- <script src="{% static 'js/article/list.js' %}"></script> -->
-{% endblock %}
