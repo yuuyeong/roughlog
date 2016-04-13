@@ -40,14 +40,15 @@ PIPELINE = {
         },
     },
     'JAVASCRIPT': {
-        'application': {
+        'API': {
             'source_filenames': (
-              'js/roughlog/*.js',
+              'js/API/*.js',
             ),
-            'output_filename': 'js/roughlog.js',
+            'output_filename': 'js/API.js',
         },
         'vendor': {
             'source_filenames': (
+              'js/vendor/jquery-1.10.2.min.js',
               'js/vendor/*.js',
             ),
             'output_filename': 'js/vendor.js',
