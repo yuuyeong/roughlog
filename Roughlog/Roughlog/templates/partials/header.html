@@ -1,16 +1,42 @@
-<header id="header">
-<ul>
-	{% if request.user.is_authenticated %}
-		<h4>{{request.user.nickname}}</h4>
-		<p>account : {{request.user.username}}</p>
-		<p>description : {{request.user.description}}</p>
-		<a id="article_list" href="{% url 'article_list' %}">포켓 리스트</a>
-		<a id="" href="{% url 'my-page' request.user.nickname %}">마이 페이지</a>
-		<a id="" href="{% url 'post-new' %}">포스트 작성</a>
-		<a id="" href="{% url 'user-search' %}">검색</a>
-		<a id="" href="{% url 'signout' %}">로그아웃</a>
-	{% else %}
-		<a href="{% url 'social:begin' 'pocket' %}?next={{ request.path }}">포켓으로 로그인</a>
-	{% endif %}
-</ul>
+<!-- Header -->
+<header id="fh5co-header" role="banner" >
+	<div class="container">
+		<!-- Logo -->
+		<div id="fh5co-logo">
+			<a href="index.html">
+				Roughlog
+			</a>
+		</div>
+		<!-- Logo -->
+		
+		<!-- Mobile Toggle Menu Button -->
+		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+		
+		<!-- Main Nav -->
+		<div id="fh5co-main-nav">
+			<nav id="fh5co-nav" role="navigation">
+				<ul>
+					{% if request.user.is_authenticated %}
+					<li>
+						<a href="{% url 'home' %}">Home</a>
+					</li>
+					<li class="fh5co-active">
+						<a href="{% url 'article_list' %}">포켓리스트</a>
+					</li>
+					<li>
+						<a href="{% url 'user-search' %}">검색</a>
+					</li>
+<!-- 					<li>
+						<a href="{% url 'my-page' request.user.nickname %}">{{request.user.nickname}}</a>
+					</li> -->
+					<li>
+						<a href="{% url 'signout' %}">로그아웃</a>
+					</li>
+				{% endif %}
+				</ul>
+			</nav>
+		</div>
+		<!-- Main Nav -->
+
+	</div>
 </header>

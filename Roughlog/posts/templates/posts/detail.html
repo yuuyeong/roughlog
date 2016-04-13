@@ -1,47 +1,17 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<hr>
-
-	<h4>TITLE : {{ post.title }}</h4>
-
-	{{ post.content|safe }}
-
-	<!-- clip 관련 -->
-	<h4>clip({{ post.clip_user_set.count }})</h4>
-	<div>
-		<a href="{% url 'post-clip' post.pk %}" role="button" name="like">ⓒ</a>
+<div id="fh5co-intro">
+	<div class="container">
+		<h2>{{ post.title }}</h2>
+			<div class="row">
+				<div class="col-md-6 fh5co-intro-sub">
+					<a href="{{post.article.origin_url}}" class="btn btn-outline btn-md btn-block">
+					 	{{post.article.title}}dafasdfasdfasdfasdf
+					 </a>
+					<br>
+					{{ post.content|safe }}
+				</div>
+			</div>
 	</div>
-
-	<!-- comment 작성 -->
-
-	<form action="{% url 'comment' post.pk %}" method="post">
-		{% csrf_token %}
-		<textarea name="content" id="" cols="30" rows="10"></textarea>
-		<input type="submit" value="등록">
-	</form>
-
-
-	<!-- comment list -->
-	<section>
-		<h4>comments({{ post.comment_set.count }})</h4>
-		<ul>
-		{% for comment in post.comment_set.all %}
-			<li>{{ comment.user.nickname }} : {{ comment.content }}</li>
-		{% endfor %}
-		</ul>
-		
-	</section>
-
-	<!-- tag list -->
-	<section>
-		<h4>Tags({{ post.tag_set.count }})</h4>
-		<ul>
-		{% for tag in post.tag_set.all %}
-		<a href="{% url 'tag-detail' tag.name %}">
-			<li>#{{ tag.name }}</li>
-		</a>
-		{% endfor %}
-		</ul>
-	</section>
+</div>
 {% endblock %}

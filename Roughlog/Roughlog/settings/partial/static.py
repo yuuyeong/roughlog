@@ -28,11 +28,29 @@ PIPELINE = {
     'STYLESHEETS': {
         'application': {
             'source_filenames': (
-              'css/*.css',
+              'css/roughlog/*.css',
             ),
             'output_filename': 'css/roughlog.css',
         },
+        'vendor': {
+            'source_filenames': (
+              'css/vendor/*.css',
+            ),
+            'output_filename': 'css/vendor.css',
+        },
     },
     'JAVASCRIPT': {
+        'application': {
+            'source_filenames': (
+              'js/roughlog/*.js',
+            ),
+            'output_filename': 'js/roughlog.js',
+        },
+        'vendor': {
+            'source_filenames': (
+              'js/vendor/*.js',
+            ),
+            'output_filename': 'js/vendor.js',
+        },
     },
 }
