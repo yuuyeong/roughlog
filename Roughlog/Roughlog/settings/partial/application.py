@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'social.apps.django_app.default',
     'pipeline',
+    'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [
