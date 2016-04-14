@@ -4,10 +4,26 @@
 	<div class="container">
 		<h4>{{ post.title }}</h4>
 			<div class="row">
-				<div class="col-md-6 fh5co-intro-sub clearfix">
-					<a href="{{post.article.origin_url}}" class="btn btn-outline btn-md btn-block">
+				<div class="col-md-8 fh5co-intro-sub clearfix">
+					<!-- <a href="{{post.article.origin_url}}" class="btn btn-outline btn-md btn-block">
 					 	{{post.article.title}}
-					 </a>
+					 </a> -->
+
+<a href='{{post.article.origin_url}}'>
+<div class='col-md-4 inner-article'>
+<h6 class='modify-title'>
+{{ post.article.title }}
+</h6>
+<div class="inner-content">
+{{post.article.excerpt}}
+</div>
+</div>
+</a>
+
+
+
+
+
 					<br>
 					<div class="summernote-text">
 					{{ post.content|safe }}
@@ -17,7 +33,7 @@
 
 			
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-8">
 					<p>
 					{% for tag in post.tag_set.all %}
 						<a href="{% url 'tag-detail' tag.name %}"><span>#{{tag.name}} </span></a>
@@ -30,7 +46,7 @@
 
 			<hr />
 			{% if request.user == post.user %}
-			<ul class="col-md-6 post-option">
+			<ul class="col-md-8 post-option">
 				<a href="{% url 'post-update' post.pk %}"><li>수정</li></a>
 				<a href=""><li>삭제</li></a>
 			</ul>
@@ -38,7 +54,7 @@
 
 			<div class="fh5co-spacer fh5co-spacer-xs"></div>
 			<div class="row">
-			<div class="form-group col-md-6">
+			<div class="form-group col-md-8">
 				<form action="{% url 'comment' post.pk %}" method="post">
 					{% csrf_token %}
 					<label for="message" class="sr-only">message</label>	
@@ -49,7 +65,7 @@
 			</div></div>
 
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-8">
 					<h2 class="fh5co-uppercase-heading-sm">댓글({{post.comment_set.count}})</h2>
 					{% for comment in post.comment_set.all %}
 					<div class="row">
