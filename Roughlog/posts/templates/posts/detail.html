@@ -5,25 +5,16 @@
 		<h4>{{ post.title }}</h4>
 			<div class="row">
 				<div class="col-md-8 fh5co-intro-sub clearfix">
-					<!-- <a href="{{post.article.origin_url}}" class="btn btn-outline btn-md btn-block">
-					 	{{post.article.title}}
-					 </a> -->
-
-<a href='{{post.article.origin_url}}'>
-<div class='col-md-4 inner-article'>
-<h6 class='modify-title'>
-{{ post.article.title }}
-</h6>
-<div class="inner-content">
-{{post.article.excerpt}}
-</div>
-</div>
-</a>
-
-
-
-
-
+					<a href='{{post.article.origin_url}}'>
+						<div class='col-md-4 inner-article'>
+							<h6 class='modify-title'>
+							{{ post.article.title }}
+							</h6>
+							<div class="inner-content">
+							{{post.article.excerpt}}
+							</div>
+						</div>
+					</a>
 					<br>
 					<div class="summernote-text">
 					{{ post.content|safe }}
