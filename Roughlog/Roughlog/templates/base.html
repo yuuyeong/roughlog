@@ -24,6 +24,7 @@
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
+	{% javascript "vendor" %}
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
@@ -44,7 +45,7 @@
 		{% include 'partials/header.html' %}
 		<!-- Header -->
 		<div class="container">
-			<div class="row clearfix">
+			<div class="row clearfix" id="content-row" {% if request.user.is_authenticated %} data-user-id="{{ request.user.nickname }}"{% endif %}>
 				{% block content %}
 				{% endblock %}
 			</div>	
@@ -52,13 +53,13 @@
 		
 		
 		<!-- Footer -->
-		{% include 'partials/footer.html' %}
+		<!-- {% include 'partials/footer.html' %} -->
 		<!-- Footer -->
 		
 		<!-- Go To Top -->
 		<a href="#" class="fh5co-gotop"><i class="ti-shift-left"></i></a>
-		
-		{% javascript "vendor" %}
-		{% javascript "application" %}
+
+		{% block custom_js %}
+		{% endblock %}
 	</body>
 </html>

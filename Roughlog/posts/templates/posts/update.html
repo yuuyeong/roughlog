@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-md-12">
+	<h2 class="fh5co-uppercase-heading-sm text-center">포스트 작성</h2>
+	<div class="fh5co-spacer fh5co-spacer-xs"></div>
+</div>
+<div class="col-md-12 col-md-offset-2">
+	<form  method="post">
+		{% csrf_token %}
+		<div class="col-md-8">
+			<div class="form-group">
+				{{ form.as_p }}
+				<input type="submit" class="btn btn-primary btn-md" value="수">
+			</div>
+		</div>
+	</form>
+</div>
+{% endblock %}

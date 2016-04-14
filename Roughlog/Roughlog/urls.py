@@ -24,6 +24,8 @@ from articles.views import *
 from users.views import *
 from posts.views import *
 from tags.views import *
+from articles.api import *
+from posts.api import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -40,6 +42,7 @@ urlpatterns = [
 
     url(r'^post/new/(?P<pk>\d+)/$', NewPostCreateView.as_view(), name="post-new"),
     url(r'^post/(?P<pk>\d+)/$', PostDetailView.as_view(), name="post-detail"),
+    url(r'^post/update/(?P<pk>\d+)/$', PostUpdateView.as_view(), name="post-update"),
     url(r'^post/(?P<pk>\d+)/clip/$', PostClipView.as_view(), name="post-clip"),
 
     url(r'^post/(?P<pk>\d+)/comment/$', CreateCommentView.as_view(), name="comment"),
@@ -50,4 +53,9 @@ urlpatterns = [
     url('', include('social.apps.django_app.urls', namespace='social')),
 
     url(r'^summernote/', include('django_summernote.urls')),
+
+    url(r'^api/pocket/(?P<slug>\w+)/$', PocketListAPIView.as_view(), name="user-pocket-api"),
+    url(r'^api/post/(?P<slug>\w+)/$', PostListAPIView.as_view(), name="user-post-api"),
+
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ] + static(settings.MEDIA_URL, document_ROOT=settings.MEDIA_ROOT)

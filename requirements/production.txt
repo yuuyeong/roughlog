@@ -10,3 +10,4 @@ honcho
 psycopg2
 dj-database-url
 django-pipeline
+djangorestframework
