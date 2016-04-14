@@ -1,1 +1,1 @@
-from .post import PostCreateForm
+from .post import PostCreateForm, PostUpdateForm
