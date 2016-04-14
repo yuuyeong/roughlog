@@ -23,15 +23,15 @@ class PostUpdateForm(forms.ModelForm):
         tags = kwargs['instance'].tag_set.all()
         super(PostUpdateForm, self).__init__(*args, **kwargs)
         tag_name_list = [tag.name for tag in tags]
-        self.fields['tag_set'] = forms.CharField(initial={'subject': " ".join(tag_name_list)})
+        self.fields['tag_set'] = forms.CharField(initial=" ".join(tag_name_list))
 
     class Meta:
         model = Post
         fields = [
             'title',
             'content',
-            'tag_set',
         ]
         widgets = {
             'content': SummernoteWidget(),
+            'tag_set': forms.TextInput(),
         }

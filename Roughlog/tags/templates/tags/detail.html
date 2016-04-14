@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load pipeline %}
 {% block content %}
 {{ tag.name }}
-<ul>
-	{% for post in tag.post_set.all %}
-	<li>
-		{{ post.title }}
-	</li>
-	{% endfor %}
-</ul>
+<div id="post-set-row" data-tag-id="{{tag.name}}">
+
+</div>
+{% endblock %}
+
+{% block custom_js %}
+{% javascript "post_api" %}
 {% endblock %}
