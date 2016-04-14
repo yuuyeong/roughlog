@@ -1,15 +1,10 @@
 {% extends 'users/profile.html' %}
 
 {% block posts %}
-<ul>
-	post({{ request.user.post_set.count }})
-	{% for post in request.user.post_set.all %}
-	<li>
-		<a href="{% url 'post-detail' post.pk %}">
-			{{ post.title }}
-		</a>
-	</li>
-	{% endfor %}
 
-</ul>
+<p>게시물 : {{ request.user.post_set.count }}</p>
+<div id="post-row">
+	
+</div>
+
 {% endblock %}

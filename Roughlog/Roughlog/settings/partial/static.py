@@ -40,11 +40,17 @@ PIPELINE = {
         },
     },
     'JAVASCRIPT': {
-        'API': {
+        'post_api': {
             'source_filenames': (
-              'js/API/*.js',
+              'js/post_api/*.js',
             ),
-            'output_filename': 'js/API.js',
+            'output_filename': 'js/post_api.js',
+        },
+        'article_api': {
+            'source_filenames': (
+              'js/article_api/*.js',
+            ),
+            'output_filename': 'js/article_api.js',
         },
         'vendor': {
             'source_filenames': (

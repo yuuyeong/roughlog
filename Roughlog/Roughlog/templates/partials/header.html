@@ -3,7 +3,7 @@
 	<div class="container">
 		<!-- Logo -->
 		<div id="fh5co-logo">
-			<a href="index.html">
+			<a href="{% url 'home' %}">
 				Roughlog
 			</a>
 		</div>
@@ -14,13 +14,13 @@
 		
 		<!-- Main Nav -->
 		<div id="fh5co-main-nav">
-			<nav id="fh5co-nav" role="navigation">
+			<nav id="fh5co-nav" role="navigation" class="col-md-12">
 				<ul>
 					{% if request.user.is_authenticated %}
 					<li>
 						<a href="{% url 'home' %}">Home</a>
 					</li>
-					<li class="fh5co-active">
+					<li>
 						<a href="{% url 'article_list' %}">포켓리스트</a>
 					</li>
 					<li>

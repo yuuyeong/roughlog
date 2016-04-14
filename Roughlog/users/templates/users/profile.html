@@ -1,17 +1,26 @@
 {% extends 'base.html' %}
-
-{% block content %}
-<div class="col-md-4 col-sm-6">
-	<h2 class="h4">{{request.user.nickname}}</h2>
-	<p>account : {{request.user.username}}</p>
-	<p>description : {{request.user.description}}</p>
-</div>
-<div class="fh5co-spacer fh5co-spacer-md"></div>
-
+{% load pipeline %}
 <!-- <a id="" href="{% url 'my-page' request.user.nickname %}">POST</a>
 <a id="" href="{% url 'my-page-clip' request.user.nickname %}">CLIPED POST</a> -->
+{% block content %}
+<div id="fh5co-intro">
+	<div class="container">
+		<h2 class="h4">{{request.user.nickname}}</h2>
+		<p class="user_id">{{request.user.username}}</p>
+			<div class="row">
+				<div class="col-md-6 des">
+					<p>{{request.user.description}}</p>
+				</div>
+			</div>
+			<hr />
+	</div>
+</div>
 
 {% block posts %}
 {% endblock %}
 
+{% endblock %}
+
+{% block custom_js %}
+{% javascript "post_api" %}
 {% endblock %}
