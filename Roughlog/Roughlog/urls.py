@@ -27,6 +27,7 @@ from tags.views import *
 from articles.api import *
 from posts.api import *
 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name="home"),
@@ -56,6 +57,7 @@ urlpatterns = [
 
     url(r'^api/pocket/(?P<slug>\w+)/$', PocketListAPIView.as_view(), name="user-pocket-api"),
     url(r'^api/post/(?P<slug>\w+)/$', PostListAPIView.as_view(), name="user-post-api"),
+    url(r'^api/tag/(?P<slug>\w+)/$', PostsetListAPIView.as_view(), name="tag-post-set-api"),
 
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ] + static(settings.MEDIA_URL, document_ROOT=settings.MEDIA_ROOT)

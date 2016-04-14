@@ -1,1 +1,1 @@
-from .post import PostListAPIView
+from .post import PostListAPIView, PostsetListAPIView
