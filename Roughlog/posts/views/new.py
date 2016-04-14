@@ -14,7 +14,7 @@ class NewPostCreateView(FormView):
 
     def post(self, request, *args, **kwargs):
         pocket = Pocket.objects.get(pk=kwargs.get("pk"))
-        tag_list = request.POST.get('tag').split(" ")
+        tag_list = request.POST.get('tag_set').split(" ")
 
         post = Post.objects.create(
             user=request.user,
