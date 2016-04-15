@@ -65,9 +65,11 @@ class JsonDataParser(object):
     def _get_json_data(self):
         # socail auth의 유저정보 받아오기
         user = UserSocialAuth.objects.get(uid=self.user.username)
+        extra_data = json.loads(user.extra_data)
+        # from IPython import embed;embed()
         data = {
             "consumer_key": settings.SOCIAL_AUTH_POCKET_KEY,
-            "access_token": user.extra_data['access_token'],
+            "access_token": extra_data.get('access_token'),
             "detailType": "complete",
         }
 
